@@ -27,7 +27,7 @@ class MiApp extends StatelessWidget{
     return MaterialApp(
       title: 'Mi Catálogo',
       debugShowCheckedModeBanner: false,
-      theme: ThemeData(colorScheme: Colors.blue, useMaterial3: true),
+      theme: ThemeData(colorSchemeSeed: Colors.blue, useMaterial3: true),
       home: const CatalogoScreen(),
     );
   }
@@ -37,7 +37,8 @@ class CatalogoScreen extends StatefulWidget {
   const CatalogoScreen({super.key});
 
   @override
-  State<CatalogoScreen> createState() => _CatalogoScreenState();
+  State<CatalogoScreen> createState() => CatalogoScreenState();
+  //No me compila si metodo es privado
 }
 class CatalogoScreenState extends State<CatalogoScreen>{
   final List<Producto> productos = [
