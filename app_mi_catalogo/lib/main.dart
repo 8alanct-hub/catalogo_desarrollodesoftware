@@ -69,7 +69,23 @@ class CatalogoScreenState extends State<CatalogoScreen>{
       }
       return total;
     }
+
   }
+
+void irAlCarrito() {
+  List<Producto> seleccionados = [];
+  for (var p in productos){
+    if (p.cantidad > 0){
+      seleccionados.add(p);
+    }
+  }
+  Navigator.push(
+    context,
+    MaterialPageRoute(
+      builder: (context) => CarritoScreen(seleccionados: seleccionados),
+    ),
+  );
+}
 
 
   @override
